@@ -11,15 +11,65 @@
   <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 </head>
 <body>
+  <h1>HARINGO</h1>
+  
   <main>
     <section class="swiper-wrapper">
-      <article class="swiper-slide">Slide 1</article>
-      <article class="swiper-slide">Slide 2</article>
-      <article class="swiper-slide">Slide 3</article>
-      <article class="swiper-slide">Slide 4</article>
-      <article class="swiper-slide">Slide 5</article>
+      <article class="swiper-slide">
+        <div class="inner">
+          <div class="con">
+            <img src="img/pic1.png" alt="pic1">
+            <h2>Lorem ipsum dolor sit.</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, labore.</p>
+          </div>
+        </div>
+      </article>
+      <article class="swiper-slide">
+        <div class="inner">
+          <div class="con">
+            <img src="img/pic2.png" alt="pic2">
+            <h2>Ducimus doloribus consequatur ullam.</h2>
+            <p>Rem numquam rerum sequi minima, facilis debitis eligendi molestias? Saepe!</p>
+          </div>
+        </div>
+      </article>
+      <article class="swiper-slide">
+        <div class="inner">
+          <div class="con">
+            <img src="img/pic3.png" alt="pic3">
+            <h2>Soluta non quidem inventore!</h2>
+            <p>Ad quae earum reiciendis magni velit quam sint id recusandae?</p>
+          </div>
+        </div>
+      </article>
+      <article class="swiper-slide">
+        <div class="inner">
+          <div class="con">
+            <img src="img/pic4.png" alt="pic4">
+            <h2>Fugiat ut ducimus inventore!</h2>
+            <p>Iste officia, dolor eius blanditiis ut officiis. Ullam, beatae possimus!</p>
+          </div>
+        </div>
+      </article>
+      <article class="swiper-slide">
+        <div class="inner">
+          <div class="con">
+            <img src="img/pic5.png" alt="pic5">
+            <h2>Commodi beatae distinctio eum.</h2>
+            <p>Officiis, praesentium provident? Cupiditate incidunt facilis minus necessitatibus repellendus! Minima?</p>
+          </div>
+        </div>
+      </article>
     </section>
+
+    <nav class="swiper-pagination"></nav>
+    <nav class="swiper-button-prev navi"></nav>
+    <nav class="swiper-button-next navi"></nav>
   </main>
+
+  <footer>
+    2022 HARINGO &copy; ALL RIGHTS RESERVED.
+  </footer>
 
   <script>
     //기본 스와이퍼 연결법
@@ -30,7 +80,23 @@
       grabCursor: true,
       slidesPerView: "3", //숫자값 주면 해당 갯수 단위로 패널 보임, "auto":100%, 특정 크기 지정은 스와이프 슬라이더 값 주고 auto로 지정
       spaceBetween: 30, //패널 사이의 간격(px)
-      centeredSlides: true //활성화 패널을 항상 가로 가운데 배치
+      centeredSlides: true, //활성화 패널을 항상 가로 가운데 배치
+      pagination: {
+        el: ".swiper-pagination", //페이지네이션 버튼 추가
+        //clickable: true, //페이지네이션 클릭 가능 여부 설정
+        type: "fraction" //전체패널 대비 현재 활성화된 패널이 몇 번째인지
+      },
+      navigation: {
+        prevEl: ".swiper-button-prev",
+        nextEl: ".swiper-button-next"
+      },
+      effect: "coverflow",
+      coverflowEffect: {
+        rotate: 50, //Y축 회전 각도
+        stretch: -100, //당겨짐 정도, 값이 커질수록 사이 간격이 당겨짐
+        depth: 400, //3D 효과의 깊이, 입체적인 왜곡효과 정도
+        slideShadows: false //옆패널의 그림자 설정
+      }
     });
   </script>
 </body>
